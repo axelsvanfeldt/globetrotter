@@ -2,9 +2,7 @@
 
 Globetrotter is a modern Wordpress theme for anyone who loves travelling!
 
-With featues such as "Planned Trips" and "Places Visited", Globetrotter will easily help you display your adventures on interactive map charts.
-
-An demo sample of the theme can be viewed at https://codeant.se
+With featues such as "Planned Trips" and "Places Visited", Globetrotter will easily help you display your adventures on interactive map charts. A demo sample of the theme can be viewed at https://codeant.se
 
 ## How to install:
 
