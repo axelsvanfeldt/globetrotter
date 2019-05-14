@@ -1,8 +1,9 @@
-/*
+/* 
 Script to launch autoloader on input fields in "Planned Trips" and "Places Visited" if the user has selected the Algolia Places API.
 
 Shorter JS files like this one is written in classic JS and does not require compiling.
 */
+
 (function() {
     function initAutoComplete() {
         if (typeof algolia_data !== 'undefined') {

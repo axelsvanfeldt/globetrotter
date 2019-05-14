@@ -3,6 +3,7 @@ Script to launch autoloader on input fields in "Planned Trips" and "Places Visit
 
 Shorter JS files like this one is written in classic JS and does not require compiling.
 */
+
 (function() {
     function addAutoComplete(id) {
         var input = document.getElementById(id);

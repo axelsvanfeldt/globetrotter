@@ -1,8 +1,9 @@
-/*
-This script contains all functions for the Globetrotter Settings in the admin panel
+/* 
+This script contains all functions for the Globetrotter Settings/meta boxes in the admin panel.
 
-Shorter JS files like this one is written in classic JS and does not require compiling.
+This file is written in modern JS and needs to be compiled to classic JS. 
 */
+
 (() => {
     'use strict';
     let $ = jQuery;
