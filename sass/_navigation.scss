@@ -1,0 +1,40 @@
+#top-menu {
+    letter-spacing: $wide-letter-spacing;
+    text-transform: uppercase;
+    text-shadow: $blurred-shadow-medium;
+    font-weight: bold;
+    font-size: 0.8rem;
+    border-bottom: $highlight-border;
+    background: #FFF;
+    box-shadow: $blurred-shadow-large;
+    @include transition(top 0.1s ease-in-out);
+    .logo {
+        height: 48px;
+    }
+}
+
+@media screen and (min-width: $screen-breakpoint-md) {
+    #top-menu {
+        height: $nav-height;
+        .logo {
+            height: 56px;
+        }
+    }
+    
+    nav#top-menu.top-menu-hidden {
+        top: $nav-height * -1;
+    }
+}
+
+.social-menu i { 
+    font-size: 20px;
+}
+.social-menu i:hover {
+    opacity: 0.7;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #AAA;}
+
+#content {
+    padding-top: $nav-height;}

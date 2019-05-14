@@ -1,0 +1,14 @@
+@mixin transition($property) {
+    transition: $property;
+    -moz-transition: $property;
+    -ms-transition: $property;
+    -webkit-transition: $property;
+    -o-transition: $property;
+}
+
+@mixin font-size-vw($size) {
+    font-size: get-vw($size);
+    @media screen and (min-width: #{$screen-breakpoint-lg}) {
+        font-size: $size;
+    }
+}

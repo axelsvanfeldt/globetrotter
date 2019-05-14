@@ -1,0 +1,74 @@
+.single-post-intro {
+    height: calc(100vh - #{$nav-height});
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    text-align: center;
+    color: #FFF;
+    text-shadow: $blurred-shadow-large;
+    h1 {
+        margin-top: 36vh;
+        font-weight: bold;
+        @include font-size-vw(40px);
+    }
+}
+
+
+.single-post-toggle {
+    text-align: center;
+    width: 120px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    bottom: 40px;
+    position: absolute;
+    i {
+        font-size: 30px;
+    }
+}
+.single-post-toggle:hover {
+    opacity: 0.7; 
+}
+
+.single-post-toggle-next {
+    left: 20px;
+}
+
+.single-post-toggle-previous {
+    right: 20px;
+}
+
+.single-post-shares {
+    position: absolute;
+    width: 300px;
+    left: calc(50% - 150px);
+    bottom: 40px;
+    h6 {
+        text-shadow: $blurred-shadow-large;
+    }
+}
+.single-post .wp-block-quote {
+    border-radius: 4px;
+    margin: 20px;
+    padding: 14px;
+    background: rgba(0,0,0,0.03);
+    p {
+        quotes: "“ " " ”" "‘ " " ’";
+        color: #666;
+        font-style: italic;
+        font-size: 1.3rem;
+    }
+    p:before {
+        content: open-quote;
+    }
+    p:after {
+        content: close-quote;
+    }    
+    cite {
+        font-style: normal;
+        font-size: 0.9rem;
+    }
+    cite:before {
+        content: "— ";
+    }    
+}

@@ -1,0 +1,36 @@
+#post-carousel .carousel-caption {
+    font-size: 0.9rem;
+    bottom: 30px;
+    text-shadow: $blurred-shadow-medium;
+    h3 {
+        margin-bottom: 20px;
+        font-size: 1.2rem;
+    }
+    .logo {
+        height: 100px;
+    }
+}
+
+.post-carousel-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 73, 89, 0.6);
+}
+
+.post-carousel-image {
+    height: calc(100vh - #{$nav-height});
+    width: 100%;
+    object-fit: cover;
+}
+
+@media screen and (min-width: $screen-breakpoint-md) {    
+    #post-carousel .carousel-caption {
+        bottom: calc(50% - 110px);
+        h3 {
+            @include font-size-vw(28px);
+        }
+    }   
+}

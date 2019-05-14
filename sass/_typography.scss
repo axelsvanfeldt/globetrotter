@@ -1,0 +1,22 @@
+body {
+    color: $default-font-color;
+    font-family: $default-font-family;
+}
+
+a:link,
+a:visited,
+a:hover {
+    text-decoration: none;
+}
+
+a.white-link:link,
+a.white-link:visited,
+a.white-link:hover {
+    color: #FFF;
+}
+
+a.dark-link:link,
+a.dark-link:visited,
+a.dark-link:hover {
+    color: #555;
+}

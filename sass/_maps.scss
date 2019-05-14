@@ -1,0 +1,36 @@
+.chart {
+    margin: 0 auto;
+    width: 100%;
+    height: 70vh;
+}
+
+div.chart-tooltip {
+    font-weight: bold;
+    padding: 2px;
+    text-align: center;
+    font-size: 12px;
+    min-height: 70px;
+    img {
+        height: 24px;
+    }
+    i {
+        margin: 8px 1px 4px 1px;
+        color: $color-yellow;
+    }
+}
+
+.location-list-item {
+    img {
+        margin: 7px 10px 0 0;
+    }
+    i {
+        margin: 6px 1px 8px 1px;
+        color: $color-yellow;
+    }
+}
+
+@media screen and (min-width: $screen-breakpoint-md) {
+    .chart {
+        height: 65vh;
+    }
+}

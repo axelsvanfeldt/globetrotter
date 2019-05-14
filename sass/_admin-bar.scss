@@ -1,0 +1,20 @@
+body.logged-in.admin-bar #content {
+    padding-top: 29px;
+}
+@media screen and (min-width: 768px) {
+    body.logged-in.admin-bar {
+        #top-menu {
+            top: $admin-height-desktop;
+        }
+        #content {
+            padding-top: $nav-height;
+        }
+        nav.top-menu-hidden#top-menu {
+            top: $nav-height * -1;
+        }
+        .single-post-intro,
+        .post-carousel-image {
+            height: calc(100vh - #{$nav-height} - #{$admin-height-desktop});
+        }        
+    }
+}

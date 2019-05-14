@@ -1,0 +1,51 @@
+#comments-form {
+    font-size: 0.9rem;
+    .logged-in-as {
+        font-size: 0.8em;
+    }
+}
+
+.comment {
+    background: rgba(255,255,255,0.3);
+    border-radius: 4px;
+    padding: 14px 14px 10px 14px;
+    border: 1px solid $color-yellow;
+    margin: 20px 0 20px 0;
+    font-size: 14px;
+    cite {
+        font-style: normal;
+        font-weight: bold;
+    }
+    .comment {
+        margin-left: 40px;
+    }
+    .avatar {
+        float: left;
+        margin: 0 10px 10px 0;
+        border-radius: 4px;
+    }
+    p {
+        border-top: 1px solid #CCC;
+        padding-top: 8px;
+        margin-bottom: 8px;
+    }
+    .says {
+        display: none;
+    }
+    .reply {
+        font-size: 12px;
+    }
+    .comment-meta.commentmetadata {
+        margin-bottom: 12px;
+        a {
+            font-size: 12px;
+        }
+    }
+    .comment-awaiting-moderation {
+        font-size: 12px;
+    }
+}
+
+.comment-respond #reply-title {
+    font-size: 1.4rem;
+}
