@@ -11,5 +11,3 @@ Note however that all major features already are included in the theme.*
 
 As any other Wordpress theme, Globetrotter can be activated from the Wordpress admin panel by cloning the repo to your path-to-wp-installation/wp-content/themes/.
 Optionally, you can download the theme as a .zip file and uploading the compressed file in the Wordpress admin panel.
-
-You should also note that the files admin-settings.js, main.js and render-maps.js located in the /js folder should be compiled to classic JS and minified before using the theme in any production environments.

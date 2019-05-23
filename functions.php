@@ -36,46 +36,30 @@ function globetrotter_add_theme_support() {
 }
 
 function globetrotter_load_core_resources() {
-    wp_enqueue_style('font-montserrat', 'https://fonts.googleapis.com/css?family=Montserrat', array(), false, 'all');
-    wp_enqueue_style('font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), false, 'all');
-    wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), false, 'all');
-    wp_enqueue_style('normalize', get_template_directory_uri() . '/css/normalize.min.css', array(), false, 'all');
-    wp_enqueue_style('stylesheet', get_stylesheet_uri());
+    //wp_enqueue_style('stylesheet', get_stylesheet_uri());
     wp_deregister_script('jquery');
-    wp_enqueue_script('jquery', get_template_directory_uri() . '/js/jquery-3.3.1.min.js', array(), false, false);
-    wp_enqueue_script('main-js', get_template_directory_uri() . '/js/main.js', array('jquery'), false, false);
-    wp_enqueue_script('lazysizes', get_template_directory_uri() . '/js/lazysizes-4.1.5.min.js', array(), false, false);
-    wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array(), false, false);
-    global $post;
-    if ($post->post_name === "planned-trips" || $post->post_name === "places-visited") {
-        wp_enqueue_script('amcharts-core', get_template_directory_uri() . '/js/amcharts-core.min.js', array(), false, false);
-        wp_enqueue_script('amcharts-maps', get_template_directory_uri() . '/js/amcharts-maps.min.js', array(), false, false);
-        wp_enqueue_script('amcharts-world', get_template_directory_uri() . '/js/amcharts-worldLow.min.js', array(), false, false);
-        wp_enqueue_script('amcharts-animated', get_template_directory_uri() . '/js/amcharts-animated.min.js', array(), false, false);
-    }
+    wp_enqueue_script('main-js', get_template_directory_uri() . '/dist/js/app.js', array(), false, false);
+    wp_enqueue_style('font-awesome', 'https://use.fontawesome.com/releases/v5.8.2/css/all.css');    
 }
 
 function globetrotter_load_admin_resources() {
-    wp_enqueue_style('font-montserrat', 'https://fonts.googleapis.com/css?family=Montserrat', array(), false, 'all');
     wp_enqueue_style('wp-color-picker');
-    wp_enqueue_style('admin-stylesheet', get_template_directory_uri() . '/css/admin-panel.css', array(), false, 'all');
-    wp_enqueue_script('admin-js', get_template_directory_uri() . '/js/admin-settings.js', array('jquery', 'wp-color-picker'), false, true);
+    wp_enqueue_script('admin-js', get_template_directory_uri() . '/dist/js/admin.js', array('jquery', 'wp-color-picker'), false, true);
     $api = get_option('settings-api');
     if ($api === 'google') {
         $apiKey = esc_attr(get_option('settings-google-key'));
-        wp_enqueue_script('google-places', 'https://maps.googleapis.com/maps/api/js?key=' . $apiKey . '&libraries=places', array(), false, true);    
-        wp_enqueue_script('algolia-autocomplete', get_template_directory_uri() . '/js/autocomplete-google.js', array('google-places'), false, true);
+        wp_enqueue_script('google-places', 'https://maps.googleapis.com/maps/api/js?key=' . $apiKey . '&libraries=places', array(), false, true);
+        wp_enqueue_script('algolia-autocomplete', get_template_directory_uri() . '/dist/js/autocomplete_google.js', array('google-places'), false, true);
     }
     else {
         $apiID = get_option('settings-algolia-app');
         $apiKey = get_option('settings-algolia-key');
-        wp_register_script('algolia-places', get_template_directory_uri() . '/js/algolia-places.min.js', array(), false, true);
-        wp_localize_script('algolia-places', 'algolia_data', array(
+        wp_register_script('algolia-autocomplete', get_template_directory_uri() . '/dist/js/autocomplete_algolia.js', array(), false, true);
+        wp_localize_script('algolia-autocomplete', 'algolia_data', array(
             'app_id' => $apiID,
             'api_key' => $apiKey,
         ));
-        wp_enqueue_script('algolia-places');
-        wp_enqueue_script('algolia-autocomplete', get_template_directory_uri() . '/js/autocomplete-algolia.js', array('algolia-places'), false, true);
+        wp_enqueue_script('algolia-autocomplete');
     }
 }
 

@@ -62,7 +62,7 @@ function globetrotter_get_map_data($id, $bgColor) {
 }
 
 function globetrotter_load_map_script($id, $data) {
-    wp_register_script($id, get_template_directory_uri() . '/js/render-maps.js', array(), false, true);
+    wp_register_script($id, get_template_directory_uri() . '/dist/js/maps.js', array(), false, true);
     wp_localize_script($id, 'map_data', $data);
     wp_enqueue_script($id);
 }

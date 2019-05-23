@@ -293,7 +293,7 @@ function globetrotter_register_post_types() {
 }
 
 function globetrotter_add_editor_style() {
-    add_editor_style('/css/admin-editor.css');
+    add_editor_style('style-editor.css');
 }
 
 function globetrotter_add_meta_boxes() {
