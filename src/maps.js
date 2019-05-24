@@ -203,4 +203,5 @@ import am4themes_animated from "@amcharts/amcharts4/themes/animated";
     }
 
     maps.initialize();
+    
 })();
