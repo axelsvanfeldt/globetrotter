@@ -26,8 +26,8 @@
                 ?>
                 <small>Copyright © <?php echo date('Y');?> - All rights reserved.</small>
             </div>
-            <div class="col-4 text-right">
-                Any content...
+            <div class="col-4">
+                <?php get_template_part('template-parts/footer/widgets'); ?>
             </div>
         </div>
 </footer>

@@ -67,9 +67,25 @@ function globetrotter_render_title_tag() {
     ?><title><?php wp_title( '|', true, 'right' ); ?></title><?php
 }
 
+function globetrotter_initialize_widgets() {
+	register_sidebar(
+		array(
+			'name'          => __('Footer', 'globetrotter'),
+			'id'            => 'sidebar-footer',
+			'description'   => __('Add widgets here to appear in your footer.', 'globetrotter'),
+			'before_widget' => '<div>',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4>',
+			'after_title'   => '</h4>',
+		)
+	);
+}
+
+
 add_action('after_setup_theme', 'globetrotter_add_theme_support');
 add_action('wp_enqueue_scripts', 'globetrotter_load_core_resources');
 add_action('admin_enqueue_scripts', 'globetrotter_load_admin_resources');
 add_action('wp_head', 'globetrotter_render_title_tag');
+add_action('widgets_init', 'globetrotter_initialize_widgets');
 globetrotter_require_files();
 ?>
