@@ -27,7 +27,9 @@
                 <small>Copyright © <?php echo date('Y');?> - All rights reserved.</small>
             </div>
             <div class="col-4">
-                <?php get_template_part('template-parts/footer/widgets'); ?>
+                <?php if (is_active_sidebar('sidebar-footer')) {
+                    dynamic_sidebar('sidebar-footer');
+                } ?>
             </div>
         </div>
 </footer>
