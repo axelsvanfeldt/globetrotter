@@ -194,7 +194,7 @@ function globetrotter_render_general_settings_sharing_platforms() {
     <label for="email">Email</label>
     <br>      
     <input type="checkbox" id="none" name="settings-sharing-platforms[none]" value="1" style="display:none" checked>
-    <p class="description">The selected sources enables visitors to share your blog posts on those platforms.</p>';
+    <p class="description">The selected sources enables visitors to share your pages on those platforms. Uncheck all platforms to remove the share block completely.</p>';
 }
 
 function globetrotter_render_map_settings_map_bg_color() {

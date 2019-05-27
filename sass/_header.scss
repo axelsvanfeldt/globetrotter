@@ -1,0 +1,12 @@
+.header-image {
+    text-shadow: $blurred-shadow-large;
+    text-align: center;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    .header-description {
+        display: inline-block;
+        border-bottom: 1px solid;
+    }
+}

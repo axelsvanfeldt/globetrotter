@@ -24,6 +24,22 @@ function globetrotter_add_theme_support() {
         'flex-width' => true,
         'header-text' => array('site-title', 'site-description')
     ));
+    add_theme_support('custom-header', array(
+        'default-image'      => get_template_directory_uri() . '/img/placeholders/header.jpg',
+        'default-text-color' => 'FFF',
+        'header-text'        => true,
+        'width'              => 1920,
+        'height'             => 360,
+        'flex-width'         => false,
+        'flex-height'        => true
+    ));
+    register_default_headers(array(
+        'default' => array(
+            'url'           => '%s/img/placeholders/header.jpg',
+            'thumbnail_url' => '%s/img/placeholders/header.jpg',
+            'description'   => __( 'Default image', 'globetrotter' )
+        )
+    ));
     register_nav_menus(array(
         'main-menu' => __('Main Menu', 'globetrotter'),
         'footer-menu' => __('Footer Menu', 'globetrotter'),
@@ -33,6 +49,10 @@ function globetrotter_add_theme_support() {
     add_image_size('customs-logo', 128);
     add_image_size('card-thumb', 426);
     add_image_size('large-image', 1920);
+}
+
+function apa() {
+    echo "<h1>asdfasdfasdf</h1>";
 }
 
 function globetrotter_load_core_resources() {

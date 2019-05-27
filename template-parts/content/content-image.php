@@ -3,10 +3,8 @@
         <div class="col-12 py-2 px-2 py-sm-4 px-sm-4 single-image-wrapper">
             <?php echo wp_get_attachment_image(get_the_ID(), 'large-image', false, array("class" => "single-image mb-4")); ?>
             <div class="col-12 text-center">
-                <h1 class="mb-3"><?php the_title(); ?></h1>
-                <?php globetrotter_render_post_tags(get_the_ID()); ?>
+                <?php //globetrotter_render_post_tags(get_the_ID()); ?>
                 <h6>Published <?php echo globetrotter_time_ago(); ?> by <?php the_author(); ?></h6>
-                <?php globetrotter_render_share_icons('dark-link'); ?>
             </div>            
         </div>
     </div>

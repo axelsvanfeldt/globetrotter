@@ -84,30 +84,6 @@ function globetrotter_render_post_toggle($togglePost, $direction) {
     }    
 }
 
-function globetrotter_render_share_icons($color = 'white-link') {
-    $platforms = get_option('settings-sharing-platforms');
-    if (count($platforms) > 1) {
-        echo '
-        <div class="single-post-shares">
-            <h6 class="mt-5 mb-2">Share this page</h6>
-            <ul class="nav justify-content-center social-menu">';
-            foreach ($platforms as $source => $val) {
-                if ($source != 'none') {
-                    $url = globetrotter_get_share_url($source);
-                    if ($url) {
-                        echo '
-                        <li class="nav-item">
-                            <a class="nav-link ' . $color . '" href="' . $url . '" target="_blank">' . globetrotter_get_fa_icon($source) . '</a>
-                        </li>';
-                    }
-                }
-            }
-        echo '
-            </ul>
-        </div>';
-    }
-}
-
 function globetrotter_get_fa_icon($source) {
     if ($source == "email") {
         $source = "envelope";
@@ -118,7 +94,8 @@ function globetrotter_get_fa_icon($source) {
 }
 
 function globetrotter_get_share_url($source) {
-    $currentURL = rawurlencode(get_template_directory_uri());
+    global $wp;
+    $currentURL = rawurlencode(home_url(add_query_arg(array(), $wp->request)));
     $urlMap = array(
         "email"     => 'mailto:?body=' . $currentURL,
         "facebook"  => 'https://www.facebook.com/sharer/sharer.php?u=' . $currentURL . '&title=' . $currentURL,
