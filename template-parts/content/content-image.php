@@ -9,4 +9,4 @@
         </div>
     </div>
 </div>
-<?php comments_template('/template-parts/post/comments.php'); ?>
+<?php comments_template(); ?>
