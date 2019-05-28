@@ -5,7 +5,8 @@ if ('post' === get_post_type()):
     <div id="post-<?php echo $postID; ?>" class="col-12 col-md-6 col-lg-4 d-flex align-items-stretch">
         <div class="card mb-3 mt-3 shadow-sm">
             <a href="<?php the_permalink(); ?>">
-                <?php globetrotter_render_post_thumbnail($postID, 'img', array(
+                <?php echo
+                globetrotter_get_post_thumbnail($postID, 'img', array(
                     'class' => 'card-img-top',
                     'alt' => 'Thumbnail'
                 ), 'card-thumb'); ?>
