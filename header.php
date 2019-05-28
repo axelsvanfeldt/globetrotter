@@ -8,4 +8,4 @@
 <body <?php body_class(); ?>>
 <?php get_template_part('template-parts/header/header', 'navigation'); ?>
 <div id="content" class="d-flex flex-column h-100">
-<?php get_template_part('template-parts/header/header', 'image'); ?>
+<?php globetrotter_get_dynamic_header(); ?>
