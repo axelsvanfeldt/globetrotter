@@ -15,13 +15,14 @@ function globetrotter_get_post_templates($template) {
         'post_type' => 'post'
     ));
     if($postQuery->have_posts() ) {
+        $postCount = count($postQuery->posts);
         while($postQuery->have_posts() ) {
             $postQuery->the_post();
-            if ($i % $postsPerRow == 0) {
+            if ($i % 3 === 0) {
                 echo $i ? '</div><div class="row justify-content-center">' : '<div class="row justify-content-center">';
             }
             get_template_part($template);
-            if (($i + 1) === 3) {
+            if (($i + 1) === $postCount) {
                 echo '</div>';
             }
             $i++;
