@@ -1,6 +1,6 @@
 <?php 
 
-function globetrotter_render_post_carousel() {
+function globetrotter_render_carousel_posts() {
     $overlayColor = globetrotter_hex_to_rgb(esc_attr(get_option('settings-carousel-bg-color')));
     $overlayColor = 'rgba(' . implode(",", $overlayColor) . ',0.6)';
     $postQuery = get_posts(array(
@@ -8,21 +8,23 @@ function globetrotter_render_post_carousel() {
         'numberposts' => 3
     ));
     $postCount = count($postQuery);
+    $indicators = '';
+    $items = '';
     for ($i = 0; $i < $postCount; $i++) {
+        $active = ($i == 0) ? 'active' : '';
         $postId = $postQuery[$i]->ID;
         $postTitle = $postQuery[$i]->post_title;
-        $active = $i ? '' : ' active';
-        echo '
-        <div class="carousel-item' . $active . '">';
-            globetrotter_render_post_thumbnail($postId, 'img', array(
+        $indicators .= '
+        <li data-target="#post-carousel" data-slide-to="' . $i . '" class="' . $active . '"></li>';
+        $items .= '
+        <div class="carousel-item ' . $active . '">' . 
+            globetrotter_get_post_thumbnail($postId, 'img', array(
                 'class' => 'd-block post-carousel-image',
                 'alt' => $postTitle
-            ),  'auto-width');
-            echo '
+            ), 'auto-width') . '
             <div class="post-carousel-overlay" style="background:' . $overlayColor . '">
-                <div class="carousel-caption d-block">';
-                    globetrotter_render_custom_logo(); 
-                    echo '
+                <div class="carousel-caption d-block">' . 
+                    globetrotter_get_custom_logo(true) . '
                     <h3 class="mt-4">' . esc_html(get_option('settings-carousel-heading')) . '</h3>
                     <h3 class="font-weight-bold mt-4 mt-xl-5 mb-5">' . $postTitle . '</h3>
                     <a class="white-link" href="' . get_permalink($postId) . '">
@@ -32,9 +34,16 @@ function globetrotter_render_post_carousel() {
             </div>
         </div>';
     }
+    echo '
+    <ol class="carousel-indicators">'
+        . $indicators . '
+    </ol>
+    <div class="carousel-inner">' . 
+        $items . '
+    </div>';
 }
 
-function globetrotter_render_post_thumbnail($id, $return, $attr = array(), $size = 'post-thumbnail') {
+function globetrotter_get_post_thumbnail($id, $return, $attr = array(), $size = 'post-thumbnail') {
     if (has_post_thumbnail($id)) {
         $image = ($return === 'img') ? get_the_post_thumbnail($id, $size, $attr) : get_the_post_thumbnail_url($id);
     }
@@ -50,7 +59,7 @@ function globetrotter_render_post_thumbnail($id, $return, $attr = array(), $size
             $image = get_template_directory_uri() . '/img/placeholders/post.jpg';
         }
     }
-    echo $image;
+    return $image;
 }
 
 function globetrotter_render_post_tags($id) {
@@ -62,7 +71,7 @@ function globetrotter_render_post_tags($id) {
         foreach ($tags as $tag) {
             $content .= '
             <li class="nav-item">
-                <a class="nav-link white-link pl-1 pr-1" href="#"><div class="transparent-btn">#' . $tag->name . '</div></a>
+                <a class="nav-link white-link pl-1 pr-1" href="' . get_tag_link($tag->term_id). '"><div class="transparent-btn">#' . $tag->name . '</div></a>
             </li>';
         }
         $content .= '
