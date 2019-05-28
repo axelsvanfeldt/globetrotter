@@ -12,7 +12,7 @@ body.logged-in.admin-bar #content {
         nav.top-menu-hidden#top-menu {
             top: $nav-height * -1;
         }
-        .single-post-intro,
+        .single-post-header,
         .post-carousel-image {
             height: calc(100vh - #{$nav-height} - #{$admin-height-desktop});
         }        
