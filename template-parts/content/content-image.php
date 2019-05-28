@@ -4,6 +4,6 @@
         <div class="col-12 text-center">
             <?php //globetrotter_render_post_tags(get_the_ID()); ?>
             <h6>Published <?php echo globetrotter_time_ago(); ?> by <?php the_author(); ?></h6>
-        </div>            
+        </div>
     </div>
 </div>
