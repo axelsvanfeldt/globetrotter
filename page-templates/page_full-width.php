@@ -3,12 +3,9 @@
 
 get_header();?>
 <div class="container-fluid">
-    <div clasS="row">
+    <div class="row">
         <div class="col-12 py-0 px-0">
-            <?php while (have_posts()) {
-				the_post();
-                the_content();
-            } ?>
+            <?php globetrotter_get_template('template-parts/content/content', 'page'); ?>
         </div>
     </div>
 </div>

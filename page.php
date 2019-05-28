@@ -1,11 +1,8 @@
 <?php get_header(); ?>
 <div class="container">
-    <div clasS="row">
+    <div class="row">
         <div class="col-12 py-4 px-4">
-            <?php while (have_posts()) {
-				the_post();
-                the_content();
-            } ?>
+            <?php globetrotter_get_template('template-parts/content/content', 'page'); ?>
         </div>
     </div>
 </div>
