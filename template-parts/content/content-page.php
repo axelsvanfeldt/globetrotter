@@ -1,2 +1,1 @@
-
 <?php the_content(); ?>
