@@ -11,9 +11,10 @@ if (count($platforms) > 1): ?>
                     <li class="nav-item">
                         <a class="nav-link white-link" href="<?php echo esc_url($url); ?>" target="_blank"><?php echo globetrotter_get_fa_icon($source); ?></a>
                     </li>
-                <?php endif;
+                <?php 
                 endif;
-            endforeach; ?>
+            endif;
+        endforeach; ?>
         </ul>
     </div>
 <?php endif;?>
