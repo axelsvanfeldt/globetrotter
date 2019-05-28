@@ -1,10 +1,8 @@
 <!-- This template should contain a search bar -->
-<div class="container py-4">
-    <div class="row mt3">
-        <div class="col-12">
-            <h1>Whoops!</h1>
-            <h4 class="mb-5">The page you were looking for could not be found :(</h4>
-            <p><a href="<?php echo get_bloginfo('url');?>">Go back to the home page.</a></p>
-        </div>
+<div class="row py-4">
+    <div class="col-12">
+        <h2>Whoops!</h2>
+        <h5 class="my-3">The page you were looking for could not be found :(</h5>
+        <p><a href="<?php echo get_bloginfo('url');?>">Go back to the home page</a></p>
     </div>
 </div>
