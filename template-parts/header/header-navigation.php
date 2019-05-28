@@ -1,7 +1,7 @@
 <header>
     <nav id="top-menu" class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>">
-            <?php globetrotter_render_custom_logo(); ?>
+            <?php globetrotter_get_custom_logo(false); ?>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-top-menu" aria-controls="navbar-top-menu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

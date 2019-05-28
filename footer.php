@@ -12,8 +12,8 @@
             </div>            
             <div class="col-4 text-center">
                 <?php 
-                globetrotter_render_custom_logo(); 
-                echo '
+                echo 
+                globetrotter_get_custom_logo(true) . '
                 <h5>' . get_bloginfo() . '</h5>
                 <p><a class="white-link" href="mailto:"' . get_bloginfo('admin_email') . '" target="_blank">' . get_bloginfo('admin_email') . '</a></p>';
                 wp_nav_menu(array(
