@@ -10,18 +10,18 @@ function globetrotter_get_template($template, $name = null) {
     }
 }
 
-function globetrotter_get_post_templates($template, $postsPerRow) {
+function globetrotter_get_post_templates($template) {
     $postQuery = new WP_Query($args = array(
         'post_type' => 'post'
     ));
     if($postQuery->have_posts() ) {
         while($postQuery->have_posts() ) {
             $postQuery->the_post();
-            if ($postsPerRow && ($i % $postsPerRow == 0)) {
+            if ($i % $postsPerRow == 0) {
                 echo $i ? '</div><div class="row justify-content-center">' : '<div class="row justify-content-center">';
             }
             get_template_part($template);
-            if ($postsPerRow && ($i + 1) === $postCount) {
+            if (($i + 1) === 3) {
                 echo '</div>';
             }
             $i++;
