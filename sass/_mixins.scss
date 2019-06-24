@@ -1,3 +1,16 @@
+@mixin tablet {
+    @media (min-width: #{$screen-breakpoint-md}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$screen-breakpoint-lg}) {
+        @content;
+    }
+}
+
+
 @mixin transition($property) {
     transition: $property;
     -moz-transition: $property;
@@ -6,9 +19,15 @@
     -o-transition: $property;
 }
 
+@mixin box-shadow($value) {
+    -webkit-box-shadow: #{$value};
+    -moz-box-shadow: #{$value};
+    box-shadow: #{$value};      
+}
+
 @mixin font-size-vw($size) {
     font-size: get-vw($size);
-    @media screen and (min-width: #{$screen-breakpoint-lg}) {
+    @include desktop {
         font-size: $size;
     }
 }

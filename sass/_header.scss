@@ -5,8 +5,9 @@
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    .header-description {
-        display: inline-block;
-        border-bottom: 1px solid;
-    }
+}
+
+.header-image .header-description {
+    display: inline-block;
+    border-bottom: 1px solid;
 }

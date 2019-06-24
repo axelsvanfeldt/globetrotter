@@ -11,6 +11,9 @@
     border: 1px solid;
     padding: 6px 12px 6px 12px;
 }
-.transparent-btn:hover {
-    background: transparent;
+
+@include tablet {
+    .transparent-btn:hover {
+        background: transparent;
+    }
 }

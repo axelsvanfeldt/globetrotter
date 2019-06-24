@@ -6,35 +6,40 @@
     font-size: 0.8rem;
     border-bottom: $highlight-border;
     background: #FFF;
-    box-shadow: $blurred-shadow-large;
+    @include box-shadow($blurred-shadow-large);
     @include transition(top 0.1s ease-in-out);
-    .logo {
-        height: 48px;
-    }
 }
 
-@media screen and (min-width: $screen-breakpoint-md) {
-    #top-menu {
-        height: $nav-height;
-        .logo {
-            height: 56px;
-        }
-    }
-    
-    nav#top-menu.top-menu-hidden {
-        top: $nav-height * -1;
-    }
+#top-menu .logo {
+    height: 48px;
 }
 
 .social-menu i { 
     font-size: 20px;
 }
-.social-menu i:hover {
-    opacity: 0.7;
-}
 
 .navbar-dark .navbar-nav .nav-link {
-    color: #AAA;}
+    color: #AAA;
+}
 
 #content {
-    padding-top: $nav-height;}
+    padding-top: $nav-height;
+}
+
+@include tablet {
+    #top-menu {
+        height: $nav-height;
+    }
+    
+    #top-menu .logo {
+        height: 56px;
+    }    
+    
+    nav#top-menu.top-menu-hidden {
+        top: $nav-height * -1;
+    }
+    
+    .social-menu i:hover {
+        opacity: 0.7;
+    }
+}

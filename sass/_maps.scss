@@ -10,26 +10,27 @@ div.chart-tooltip {
     text-align: center;
     font-size: 12px;
     min-height: 70px;
-    img {
-        height: 24px;
-    }
-    i {
-        margin: 8px 1px 4px 1px;
-        color: $color-yellow;
-    }
 }
 
-.location-list-item {
-    img {
-        margin: 7px 10px 0 0;
-    }
-    i {
-        margin: 6px 1px 8px 1px;
-        color: $color-yellow;
-    }
+div.chart-tooltip img {
+    height: 24px;
 }
 
-@media screen and (min-width: $screen-breakpoint-md) {
+div.chart-tooltip i {
+    margin: 8px 1px 4px 1px;
+    color: $color-yellow;
+}
+
+.location-list-item img {
+    margin: 7px 10px 0 0;
+}
+    
+.location-list-item i {
+    margin: 6px 1px 8px 1px;
+    color: $color-yellow;
+}
+
+@include tablet {
     .chart {
         height: 65vh;
     }

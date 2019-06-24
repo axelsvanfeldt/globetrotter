@@ -2,8 +2,9 @@ footer {
     font-size: 0.9rem;
     text-shadow: $blurred-shadow-medium;
     border-top: $highlight-border;
-    .logo {
-        margin: 0 auto 20px auto;
-        height: 74px;
-    }
+}
+
+footer .logo {
+    margin: 0 auto 20px auto;
+    height: 74px;
 }

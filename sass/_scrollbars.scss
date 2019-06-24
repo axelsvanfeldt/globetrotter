@@ -1,16 +1,11 @@
+html, div {
+    scrollbar-width: thin;
+    scrollbar-color: #BBB #999;
+}
+
 html::-webkit-scrollbar,
 div::-webkit-scrollbar {
 	width: 10px;
-}
-
-html::-moz-scrollbar,
-div::-moz-scrollbar {
-	width: 10px;
-}
-
-html::-o-scrollbar,
-div::-o-scrollbar {
-    width: 10px;
 }
 
 html::-webkit-scrollbar-track,
@@ -19,28 +14,8 @@ div::-webkit-scrollbar-track {
 	width: 10px;
 }
 
-html::-moz-scrollbar-track
-div::-moz-scrollbar-track
-pre::-moz-scrollbar-track {
-	width: 10px;
-}
-
-html::-o-scrollbar-track,
-div::-o-scrollbar-track {
-	width: 10px;
-}
-
 html::-webkit-scrollbar-thumb,
 div::-webkit-scrollbar-thumb {
-    background: #888;
+    background: #999;
 	width: 10px;
 }
-
-html::-moz-scrollbar-thumb,
-div::-moz-scrollbar-thumb {
-	width: 10px;
-}
-
-html::-o-scrollbar-thumb,
-div::-o-scrollbar-thumb {
-    width: 10px;}

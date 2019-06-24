@@ -1,26 +1,29 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
-.globetrotter-meta-box {
-    input {
-        border-radius: 3px;
-        padding: 6px 8px 6px 8px;
-    }
-    input[type=number] {
-        max-width: 114px;
-        width: 100%;
-    }
-    input::placeholder {
-        font-style: italic;
-    }
-    table {
-        text-align: left;
-        th {
-            width: 90px;
-        }
-        td {
-            width: 340px;
-        }
-    }
+.globetrotter-meta-box input {
+    border-radius: 3px;
+    padding: 6px 8px 6px 8px;
+}
+    
+.globetrotter-meta-box input[type=number] {
+    max-width: 114px;
+    width: 100%;
+}
+    
+.globetrotter-meta-box input::placeholder {
+    font-style: italic;
+}
+
+.globetrotter-meta-box table {
+    text-align: left;
+}
+
+.globetrotter-meta-box table th {
+    width: 90px;
+}
+
+.globetrotter-meta-box table td {
+    width: 340px;
 }
 
 #globetrotter-settings input::placeholder {
@@ -46,8 +49,7 @@ p.settings-alert-displayed {
     display: block;
 }
 
-@media screen and (min-width: 783px) {
-    
+@include tablet {
     span.algolia-places {
         width: 352px;
     }
@@ -56,5 +58,4 @@ p.settings-alert-displayed {
     .ap-hint {
         height: 30px;
     }
-    
 }

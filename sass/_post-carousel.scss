@@ -2,13 +2,15 @@
     font-size: 0.9rem;
     bottom: 30px;
     text-shadow: $blurred-shadow-medium;
-    h3 {
-        margin-bottom: 20px;
-        font-size: 1.2rem;
-    }
-    .logo {
-        height: 100px;
-    }
+}
+
+#post-carousel .carousel-caption h3 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+#post-carousel .carousel-caption .logo {
+    height: 100px;
 }
 
 .post-carousel-overlay {
@@ -26,11 +28,12 @@
     object-fit: cover;
 }
 
-@media screen and (min-width: $screen-breakpoint-md) {    
+@include tablet {    
     #post-carousel .carousel-caption {
         bottom: calc(50% - 110px);
-        h3 {
-            @include font-size-vw(28px);
-        }
     }   
+    
+    #post-carousel .carousel-caption h3 {
+        @include font-size-vw(28px);
+    }
 }
