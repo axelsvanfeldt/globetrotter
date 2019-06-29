@@ -4,6 +4,7 @@
   "description": "Globetrotter is a modern Wordpress theme for anyone who loves travelling.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
     "build": "webpack"
   },
   "repository": {
