@@ -1,6 +1,6 @@
 /* Script to handle custom funcionality in the admin inferface. */
 
-import '../sass/admin.scss';
+import '../sass/style-admin.scss';
 
 (() => {
     'use strict';

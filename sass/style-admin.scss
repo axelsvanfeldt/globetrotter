@@ -1,3 +1,5 @@
+@import "variables";
+@import "mixins";
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 .globetrotter-meta-box input {
@@ -9,8 +11,12 @@
     max-width: 114px;
     width: 100%;
 }
-    
-.globetrotter-meta-box input::placeholder {
+
+@include input-placeholder('.globetrotter-meta-box input') {
+    font-style: italic;
+}
+
+@include input-placeholder('.globetrotter-settings input') {
     font-style: italic;
 }
 
@@ -24,10 +30,6 @@
 
 .globetrotter-meta-box table td {
     width: 340px;
-}
-
-#globetrotter-settings input::placeholder {
-    font-style: italic;
 }
 
 span.algolia-places {

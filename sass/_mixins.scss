@@ -10,12 +10,18 @@
     }
 }
 
+@mixin font-size-vw($size) {
+    font-size: get-vw($size);
+    @include desktop {
+        font-size: $size;
+    }
+}
 
 @mixin transition($property) {
     transition: $property;
+    -webkit-transition: $property;
     -moz-transition: $property;
     -ms-transition: $property;
-    -webkit-transition: $property;
     -o-transition: $property;
 }
 
@@ -25,9 +31,11 @@
     box-shadow: #{$value};      
 }
 
-@mixin font-size-vw($size) {
-    font-size: get-vw($size);
-    @include desktop {
-        font-size: $size;
-    }
+@mixin input-placeholder($selector) {
+    #{$selector}::-webkit-input-placeholder {@content}
+    #{$selector}:-moz-placeholder {@content}
+    #{$selector}::-moz-placeholder {@content}
+    #{$selector}:-ms-input-placeholder {@content}
+    #{$selector}::-ms-input-placeholder {@content}
+    #{$selector}::placeholder {@content}
 }
