@@ -51,10 +51,6 @@ function globetrotter_add_theme_support() {
     add_image_size('large-image', 1920);
 }
 
-function apa() {
-    echo "<h1>asdfasdfasdf</h1>";
-}
-
 function globetrotter_load_core_resources() {
     //wp_enqueue_style('stylesheet', get_stylesheet_uri());
     wp_deregister_script('jquery');
